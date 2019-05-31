@@ -28,9 +28,6 @@ router.post('/', (req, res) => {
     const employeeID = req.body.id;
     const startTime = req.body.startTime;
     const endTime = req.body.endTime;
-
-    console.log('*** ***', employeeID);
-
     const insertText = `
     INSERT INTO employee_shift
         (employee_id, start_time, end_time)
