@@ -8,6 +8,7 @@ import {
 
 import './App.css';
 import AddShiftPage from '../AddShiftPage/AddShiftPage';
+import Footer from '../Footer/Footer';
 import ListShiftsPage from '../ListShiftsPage/ListShiftsPage';
 import Navbar from '../Navbar/Navbar';
 
@@ -27,6 +28,7 @@ function App() {
                         component={AddShiftPage}
                     />
                 </Switch>
+                <Footer />
             </div>
         </Router>
     );
