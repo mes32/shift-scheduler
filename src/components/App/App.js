@@ -9,26 +9,27 @@ import {
 import './App.css';
 import AddShiftPage from '../AddShiftPage/AddShiftPage';
 import ListShiftsPage from '../ListShiftsPage/ListShiftsPage';
+import Navbar from '../Navbar/Navbar';
 
 function App() {
-
-        return (
-            <Router>
-                <div>
-                    <Switch>
-                        <Redirect exact from="/" to="/list_shifts" />
-                        <Route
-                            exact path="/list_shifts"
-                            component={ListShiftsPage}
-                        />
-                        <Route
-                            exact path="/add_shift"
-                            component={AddShiftPage}
-                        />
-                    </Switch>
-                </div>
-            </Router>
-        );
+    return (
+        <Router>
+            <div>
+                <Navbar />
+                <Switch>
+                    <Redirect exact from="/" to="/list_shifts" />
+                    <Route
+                        exact path="/list_shifts"
+                        component={ListShiftsPage}
+                    />
+                    <Route
+                        exact path="/add_shift"
+                        component={AddShiftPage}
+                    />
+                </Switch>
+            </div>
+        </Router>
+    );
 }
 
 export default App;
