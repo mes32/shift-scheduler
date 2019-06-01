@@ -1,11 +1,11 @@
 import React from 'react';
 
-function ListShiftsPage() {
+function ShiftSchedulePage() {
     return (
         <div>
-            <p>[ ListShiftsPage ]</p>
+            <p>[ ShiftSchedulePage ]</p>
         </div>
     );
 }
 
-export default ListShiftsPage;
+export default ShiftSchedulePage;
