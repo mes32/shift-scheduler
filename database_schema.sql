@@ -12,10 +12,10 @@ CREATE TABLE employee (
 -- Note: Uses this stackoverflow post (Sergios Bagdasar) for comparing integer equality within gist
 -- https://dba.stackexchange.com/questions/37351/postgresql-exclude-using-error-data-type-integer-has-no-default-operator-class
 CREATE TABLE employee_shift (
-	employee_id INTEGER REFERENCES employee(id)
+	id SERIAL PRIMARY KEY
+	, employee_id INTEGER REFERENCES employee(id)
 	, start_time TIMESTAMP
 	, end_time TIMESTAMP
-	, PRIMARY KEY(employee_id, start_time, end_time)
 	, CONSTRAINT end_after_start CHECK (end_time > start_time)
 	, CONSTRAINT exclude_overlapping_shifts EXCLUDE USING gist (int4range(employee_id, employee_id, '[]') WITH =, tsrange(start_time, end_time) WITH &&)
 );

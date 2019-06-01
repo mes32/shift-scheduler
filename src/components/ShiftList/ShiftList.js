@@ -18,11 +18,13 @@ class ShiftList extends Component {
                 <thead>
                     <tr>
                         <th>ID</th>
+                        <th>Start Time</th>
+                        <th>End Time</th>
                     </tr>
                 </thead>
                 <tbody>
                     {this.props.shifts.map(
-                        shift => <ShiftRow key={shift.employee_id} shift={shift} />
+                        shift => <ShiftRow key={shift.id} shift={shift} />
                     )}
                 </tbody>
             </table>

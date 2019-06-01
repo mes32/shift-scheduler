@@ -6,8 +6,9 @@ const router = express.Router();
 // Returns a list all shifts ordered by the shift start time
 router.get('/', (req, res) => {
     const selectText = `
-    SELECT  
-        employee_id
+    SELECT
+        id
+        , employee_id
         , start_time
         , end_time
     FROM employee_shift
