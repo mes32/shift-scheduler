@@ -7,7 +7,7 @@ function* fetchShifts() {
         yield put({ type: 'SET_SHIFTS', payload: response.data });
     } catch (error) {
         const errorMessage = `Unable to fetch employee shifts from server, ${error}`;
-        console.log(errorMessage);
+        console.log(error);
         alert(errorMessage);
     }
 }

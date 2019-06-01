@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import shiftsReducer from './shifts';
+import shifts from './shifts';
 
 const rootReducer = combineReducers({
-    shiftsReducer
+    shifts
 });
 
 export default rootReducer;
