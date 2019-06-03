@@ -36,16 +36,24 @@ npm run client
 
 # 7. Application runs locally on PORT 3000
 ```
-
 **See:** [localhost:3000](http://localhost:3000)
 
 ## Features
 
 ### Completed Features
-
+- [x] Allows users to log new shifts
+- [x] The current shift schedule can be listed (ordered by the start time)
+- [x] An employee's shift cannot overlap with any existing shifts for the same employee
 
 ### Planned Features
-
+- [ ] Basic CSS style and UX
+- [ ] Host the project somewhere
+- [ ] Unit/Functional testing
+- [ ] Postman file
+- [ ] API documentation
+- [ ] Calendar display for all shifts
+- [ ] Add an authentication/authorization system
+- [ ] Add a user system with manager and employee roles (restrict creation to only manager roles)
 
 ## Authors
 Michael Stockman
