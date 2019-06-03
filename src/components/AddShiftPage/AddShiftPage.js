@@ -1,11 +1,11 @@
 import React from 'react';
 import AddShiftForm from '../AddShiftForm/AddShiftForm';
 
-function AddShiftPage() {
+function AddShiftPage(props) {
     return (
         <div>
             <h2>Add Shift</h2>
-            <AddShiftForm />
+            <AddShiftForm history={props.history} />
         </div>
     );
 }

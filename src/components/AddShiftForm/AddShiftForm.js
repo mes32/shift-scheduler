@@ -33,7 +33,7 @@ class AddShiftForm extends Component {
             };
             console.log(action);
             this.props.dispatch(action);
-            // history.push('/shift_schedule');
+            this.props.history.push('/shift_schedule');
         }
     }
 
