@@ -17,7 +17,7 @@ class ShiftList extends Component {
             <table>
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        <th>Employee ID</th>
                         <th>Start Time</th>
                         <th>End Time</th>
                     </tr>

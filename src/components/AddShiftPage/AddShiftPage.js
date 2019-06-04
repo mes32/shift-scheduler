@@ -3,10 +3,10 @@ import AddShiftForm from '../AddShiftForm/AddShiftForm';
 
 function AddShiftPage(props) {
     return (
-        <div>
+        <main>
             <h2>Add Shift</h2>
             <AddShiftForm history={props.history} />
-        </div>
+        </main>
     );
 }
 
