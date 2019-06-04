@@ -29,6 +29,12 @@ th {
   border-bottom: 2px solid #888;
 }
 
+tfoot {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: rgb(82, 143, 204);
+}
+
 /* Default style for forms */
 form table {
   border: 0px;

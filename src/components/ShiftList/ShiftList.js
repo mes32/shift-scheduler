@@ -3,11 +3,9 @@ import { connect } from 'react-redux';
 
 import ShiftRow from './ShiftRow/ShiftRow';
 
-class ShiftList extends Component {
-    // constructor(props) {
-    //     super(props);
-    // }
+const DEFAULT_TIMEZONE = 'America/Chicago';
 
+class ShiftList extends Component {
     componentDidMount() {
         this.props.dispatch({ type: 'FETCH_SHIFTS' });
     }
@@ -24,9 +22,16 @@ class ShiftList extends Component {
                 </thead>
                 <tbody>
                     {this.props.shifts.map(
-                        shift => <ShiftRow key={shift.id} shift={shift} />
+                        shift => <ShiftRow key={shift.id} shift={shift} timezone={DEFAULT_TIMEZONE} />
                     )}
                 </tbody>
+                <tfoot>
+                    <tr>
+                        <td colSpan="3">
+                            Timezone: {DEFAULT_TIMEZONE}
+                        </td>
+                    </tr>
+                </tfoot>
             </table>
         );
     }
