@@ -4,6 +4,7 @@
 body {
     font-family: 'Roboto', serif;
     margin: 0px;
+    color: #1f1f1f;
 }
 
 main {
@@ -22,10 +23,10 @@ th, td {
 
 th {
   font-weight: bold;
-  border-top: 2px solid #222;
-  border-bottom: 2px solid #222;
+  border-top: 2px solid #888;
+  border-bottom: 2px solid #888;
 }
 
 table {
-  border-bottom: 4px solid #222;
+  border-bottom: 4px solid #888;
 }
