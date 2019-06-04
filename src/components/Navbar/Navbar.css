@@ -1,0 +1,31 @@
+.navbar-class {
+    color: #ffffff;
+    background-color: #67aa58;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 0;
+    padding: 0.6rem 40px;
+}
+
+.navbar-class h1 {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+a:link, a:visited {
+    color: whitesmoke;
+    padding: 0.4rem 12px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+a:hover, a:active {
+    color: white;
+    background-color: #98c48e;
+    cursor: pointer;
+}
