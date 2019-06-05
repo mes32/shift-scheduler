@@ -2,9 +2,9 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 body {
-    font-family: 'Roboto', serif;
-    margin: 0px;
-    color: #1f1f1f;
+  font-family: 'Roboto', serif;
+  margin: 0px;
+  color: #1f1f1f;
 }
 
 main {
@@ -81,4 +81,13 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
   background-color: #72b962;
+}
+
+/* Default style for selects */
+select {
+  outline: none;
+  border: 1px solid #67aa58;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
 }
