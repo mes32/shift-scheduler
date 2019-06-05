@@ -15,7 +15,7 @@ class ShiftList extends Component {
             <table>
                 <thead>
                     <tr>
-                        <th>Employee ID</th>
+                        <th>ID</th>
                         <th>Employee Name</th>
                         <th>Start Time</th>
                         <th>End Time</th>
@@ -29,7 +29,7 @@ class ShiftList extends Component {
                 <tfoot>
                     <tr>
                         <td colSpan="4">
-                            Timezone: {DEFAULT_TIMEZONE}
+                            Time Zone: {DEFAULT_TIMEZONE}
                         </td>
                     </tr>
                 </tfoot>

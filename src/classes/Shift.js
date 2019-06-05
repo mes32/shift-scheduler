@@ -1,20 +1,16 @@
 import moment from 'moment-timezone';
 
+import Employee from './Employee';
+
 const PARSE_FORMAT = 'YYYY-MM-DDTHH:mm:ss.SSSZ';
 const DISPLAY_FORMAT = 'MMM D, YYYY – h:mm A';
 
 class Shift {
     constructor(id, employeeID, firstName, lastName, startTime, endTime) {
         this.id = id;
-        this.employeeID = employeeID;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        try {
-            this.startTime = moment(startTime, PARSE_FORMAT);
-            this.endTime = moment(endTime, PARSE_FORMAT);
-        } catch (error) {
-            throw new Error();
-        }
+        this.employee = new Employee(employeeID, firstName, lastName);
+        this.startTime = moment(startTime, PARSE_FORMAT);
+        this.endTime = moment(endTime, PARSE_FORMAT);
     }
 
     static loadQuery(queryResult) {
@@ -24,6 +20,10 @@ class Shift {
             shiftArray.push(shift);
         }
         return shiftArray;
+    }
+
+    getEmployeeName() {
+        return this.employee.nameFormated();
     }
 
     startTimeFormated(timezone) {

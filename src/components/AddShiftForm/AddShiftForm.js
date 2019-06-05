@@ -5,12 +5,16 @@ class AddShiftForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            employeeID: '',
+            employeeID: undefined,
             startDate: '',
             startTime: '09:00',
             endDate: '',
             endTime: '17:00'
         };
+    }
+
+    componentDidMount() {
+        this.props.dispatch({ type: 'FETCH_EMPLOYEES' });
     }
 
     handleChange = (event) => {
@@ -34,6 +38,8 @@ class AddShiftForm extends Component {
             console.log(action);
             this.props.dispatch(action);
             this.props.history.push('/shift_schedule');
+        } else {
+            alert('All fields are required in this form.');
         }
     }
 
@@ -44,10 +50,14 @@ class AddShiftForm extends Component {
                     <tbody>
                         <tr>
                             <td>
-                                Employee ID:
+                                Employee:
                             </td>
                             <td>
-                                <input type="number" name="employeeID" onChange={this.handleChange} value={this.state.employeeID} />
+                                <select name="employeeID" value={this.state.employeeID} onChange={this.handleChange}>
+                                    {this.props.employees.map(employee => 
+                                        <option key={employee.id} value={employee.id}>{employee.nameFormated()} ... (id: {employee.id})</option>
+                                    )}
+                                </select>
                             </td>
                         </tr>
                         <tr>
@@ -81,4 +91,8 @@ class AddShiftForm extends Component {
     }
 }
 
-export default connect()(AddShiftForm);
+const mapReduxStoreToProps = (reduxStore) => ({
+    employees: reduxStore.employees
+});
+
+export default connect(mapReduxStoreToProps)(AddShiftForm);

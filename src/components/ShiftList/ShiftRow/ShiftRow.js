@@ -6,8 +6,8 @@ import Shift from '../../../classes/Shift';
 function ShiftRow(props) {
     return (
         <tr>
-            <td>{props.shift.employeeID}</td>
-            <td>{props.shift.lastName}, {props.shift.firstName}</td>
+            <td>{props.shift.employee.id}</td>
+            <td>{props.shift.getEmployeeName()}</td>
             <td>{props.shift.startTimeFormated(props.timezone)}</td>
             <td>{props.shift.endTimeFormated(props.timezone)}</td>
         </tr>
