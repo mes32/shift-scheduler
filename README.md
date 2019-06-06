@@ -1,6 +1,8 @@
 # Shift Scheduler
 Create and view a work schedule. Managers/employees can view all employee shifts and create a shift.
 
+You can view a live hosted instance of this project on Heroku: [https://mysterious-tundra-83088.herokuapp.com](https://mysterious-tundra-83088.herokuapp.com)
+
 ## Utilized Web Stack
 - `User Interface` - React, CSS
 - `Client` - React, Redux, Redux-Saga
@@ -13,6 +15,7 @@ Create and view a work schedule. Managers/employees can view all employee shifts
 - Node
 - Nodemon
 - PostgreSQL
+- Heroku CLI (Optional for hosting on Heroku)
 
 ## Setup and Run
 ```bash
@@ -37,6 +40,25 @@ npm run client
 # 7. Application runs locally on PORT 3000
 ```
 **See:** [localhost:3000](http://localhost:3000)
+
+## Deploying to Heroku
+
+```bash
+# 1. From the project directory run the following to setup Heroku
+heroku create
+
+# 2. Push the 'master' branch to the newly created 'heroku' remote
+git push heroku master
+
+# 3. Add Heroku addon for PostgreSQL databases
+heroku addons:create heroku-postgresql:hobby-dev
+
+# 4. Create the database schema for the remote database
+heroku pg:psql -f database_schema.sql
+
+# 5. Insert mock data for the remote database
+heroku pg:psql -f database_mockup.sql
+```
 
 ## Features
 
