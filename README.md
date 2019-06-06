@@ -44,10 +44,11 @@ npm run client
 - [x] Allows users to log new shifts
 - [x] The current shift schedule can be listed (ordered by the start time)
 - [x] An employee's shift cannot overlap with any existing shifts for the same employee
+- [x] Basic CSS styling and user experience
+- [x] When entering shift data start and end times, the user interface attempts to anticipate user desires and reduce the chance for non-valid entries 
+- [x] Project hosted on Heroku. See [https://mysterious-tundra-83088.herokuapp.com](https://mysterious-tundra-83088.herokuapp.com/)
 
 ### Planned Features
-- [ ] Basic CSS style and UX
-- [ ] Host the project somewhere
 - [ ] Unit/Functional testing
 - [ ] Postman file
 - [ ] API documentation
