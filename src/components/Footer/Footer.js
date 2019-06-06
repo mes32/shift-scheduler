@@ -1,8 +1,10 @@
 import React from 'react';
 
+import './Footer.css';
+
 function Footer() {
     return (
-        <footer>
+        <footer className="footer-class">
             &copy; Michael Stockman
         </footer>
     );

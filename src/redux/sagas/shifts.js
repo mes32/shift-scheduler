@@ -1,10 +1,13 @@
 import axios from 'axios';
 import { put, takeLatest } from 'redux-saga/effects';
 
+import Shift from '../../classes/Shift';
+
 function* fetchShifts() {
     try {
         const response = yield axios.get('/api/shift');
-        yield put({ type: 'SET_SHIFTS', payload: response.data });
+        const shiftArray = yield Shift.loadQuery(response.data);
+        yield put({ type: 'SET_SHIFTS', payload: shiftArray });
     } catch (error) {
         const errorMessage = `Unable to fetch employee shifts from server, ${error}`;
         console.log(error);

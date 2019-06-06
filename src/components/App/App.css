@@ -1,33 +1,93 @@
-.App {
-  text-align: center;
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body {
+  font-family: 'Roboto', serif;
+  margin: 0px;
+  color: #1f1f1f;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+main {
+  margin: 2rem 40px;
+  overflow: scroll;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* Default style for tables */
+table {
+  border-collapse: collapse;
+  border-bottom: 4px solid #888;
+}
+
+th, td {
+  padding: 0.4rem 28px 0.4rem 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #888;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+tr:nth-child(even) {
+  background-color: #f0f0f0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+tfoot {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: rgb(82, 143, 204);
+}
+
+/* Default style for forms */
+form table {
+  border: 0px;
+}
+
+form table tr td:first-child {
+  text-align: right;
+  padding-right: 5px;
+}
+
+form {
+  background-color: #f0f0f0;
+  border-radius: 3px;
+  padding: 1rem 15px;
+}
+
+/* Default style for inputs */
+input {
+  outline: none;
+  border: 2px solid #ccc;
+  border-radius: 2px;
+  font-size: 1rem;
+}
+
+input:focus {
+  border: 2px solid #67aa58;
+}
+
+input[type="submit"] {
+  border: 1px solid #5b974e;
+  border-radius: 5px;
+  padding: 0.4rem 20px;
+  box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.3);
+
+  background-color: #67aa58;
+  color: white;
+
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #72b962;
+}
+
+/* Default style for selects */
+select {
+  outline: none;
+  border: 1px solid #67aa58;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
 }

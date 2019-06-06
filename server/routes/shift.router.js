@@ -7,11 +7,14 @@ const router = express.Router();
 router.get('/', (req, res) => {
     const selectText = `
     SELECT
-        id
+        employee_shift.id
         , employee_id
         , start_time
         , end_time
+        , first_name
+        , last_name
     FROM employee_shift
+    JOIN employee ON employee_shift.employee_id = employee.id
     ORDER BY start_time
     LIMIT 10000;
     `;
