@@ -1,15 +1,22 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import moment from 'moment';
+
+const DATE_FORMAT = 'YYYY-MM-DD';
+const TIME_FORMAT = 'HH:mm';
+const START_TIME_DEFAULT = '09:00';
+const END_TIME_DEFAULT = '17:00';
 
 class AddShiftForm extends Component {
     constructor(props) {
         super(props);
+        const today = moment().format(DATE_FORMAT);
         this.state = {
-            employeeID: undefined,
-            startDate: '',
-            startTime: '09:00',
-            endDate: '',
-            endTime: '17:00'
+            employeeID: '',
+            startDate: today,
+            startTime: START_TIME_DEFAULT,
+            endDate: today,
+            endTime: END_TIME_DEFAULT
         };
     }
 
@@ -18,14 +25,50 @@ class AddShiftForm extends Component {
     }
 
     handleChange = (event) => {
-        this.setState({
+        const name = event.target.name;
+        let newState = {
             ...this.state,
-            [event.target.name]: event.target.value
-        });
+            [name]: event.target.value
+        }
+
+        let startDate = newState.startDate;
+        let startTime = newState.startTime;
+        let endDate = newState.endDate;
+        let endTime = newState.endTime;
+        const startMoment = moment(startDate + startTime, DATE_FORMAT + TIME_FORMAT);
+        const endMoment = moment(endDate + endTime, DATE_FORMAT + TIME_FORMAT);
+
+        if (startMoment.isAfter(endMoment)) {
+            if (name === 'startDate') {
+                newState = {
+                    ...newState,
+                    endDate: startDate,
+                    endTime: END_TIME_DEFAULT
+                };
+            } else if (name === 'startTime') {
+                newState = {
+                    ...newState,
+                    endTime: startTime
+                };
+            } else if (name === 'endDate') {
+                newState = {
+                    ...newState,
+                    startDate: endDate,
+                    startTime: START_TIME_DEFAULT
+                };
+            } else if (name === 'endTime') {
+                newState = {
+                    ...newState,
+                    startTime: endTime
+                };
+            }
+        }
+        this.setState(newState);
     }
 
     handleSubmit = (event) => {
         event.preventDefault();
+        console.log(this.state);
         if (this.state.employeeID && this.state.startTime && this.state.startDate && this.state.endTime && this.state.endDate) {
             const action = {
                 type: 'ADD_SHIFT',
@@ -53,9 +96,10 @@ class AddShiftForm extends Component {
                                 Employee:
                             </td>
                             <td>
-                                <select name="employeeID" value={this.state.employeeID} onChange={this.handleChange}>
+                                <select name="employeeID" value={this.state.employeeID} onChange={this.handleChange} required>
+                                    <option value="" disabled hidden>-- Select Employee --</option>
                                     {this.props.employees.map(employee => 
-                                        <option key={employee.id} value={employee.id}>{employee.nameFormated()} ... (id: {employee.id})</option>
+                                        <option key={employee.id} value={employee.id}>{employee.nameFormated()} (id: {employee.id})</option>
                                     )}
                                 </select>
                             </td>
