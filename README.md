@@ -34,10 +34,11 @@ npm install
 # 5. Start the server
 npm run server
 
-# 6. Start the client
+# 6. Start the client (runs locally on PORT 3000)
 npm run client
 
-# 7. Application runs locally on PORT 3000
+# 7. Optional run unit tests using Jest
+npm run test
 ```
 **See:** [localhost:3000](http://localhost:3000)
 
