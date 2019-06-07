@@ -1,5 +1,12 @@
+const NUMBER = 'number';
+const STRING = 'string';
+
 class Employee {
     constructor(id, firstName, lastName) {
+        if (typeof id !== NUMBER || typeof firstName !== STRING || typeof lastName !== STRING) {
+            throw new TypeError('Invalid inputs for class Employee');
+        }
+
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
