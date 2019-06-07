@@ -1,5 +1,5 @@
 # Shift Scheduler
-Create and view a work schedule. Managers/employees can view all employee shifts and create a shift.
+Create and view an hourly work schedule. Managers/employees can view a list of all employee shifts and add new shifts.
 
 You can view a live hosted instance of this project on Heroku: [https://mysterious-tundra-83088.herokuapp.com](https://mysterious-tundra-83088.herokuapp.com)
 
@@ -66,7 +66,7 @@ heroku pg:psql -f database_mockup.sql
 - [x] Allows users to log new shifts
 - [x] The current shift schedule can be listed (ordered by the start time)
 - [x] An employee's shift cannot overlap with any existing shifts for the same employee
-- [x] Basic CSS styling and user experience
+- [x] Basic CSS styling and basic quality of life user experience
 - [x] When entering shift data start and end times, the user interface attempts to anticipate user desires and reduce the chance for non-valid entries 
 - [x] Project hosted on Heroku. See [https://mysterious-tundra-83088.herokuapp.com](https://mysterious-tundra-83088.herokuapp.com/)
 
